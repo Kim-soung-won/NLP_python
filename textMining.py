@@ -1,3 +1,4 @@
+# pip install konlpy pandas seaborn matplotlib re
 from konlpy.tag import *
 import os
 # 정규 표현식을 위한
@@ -14,8 +15,8 @@ os.environ['JAVA_HOME'] = r'C:\Program Files\Java\jdk-17\bin'
 
 # 형태소 분석기 객체 생성
 okt = Komoran()
-speech = open('speech.txt', encoding='UTF-8').read()
-korSpeech = re.sub('[^가-힣]', ' ', speech)
+speech = open('mypr.txt', encoding='UTF-8').read()
+korSpeech = re.sub('[^가-힣]', ' ', speech) # 한글 제외하고 삭제
 print(korSpeech)
 
 nonse = okt.nouns(korSpeech)
